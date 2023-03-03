@@ -1,6 +1,5 @@
 import os
 from dotenv import load_dotenv
-from keep_alive import keep_alive as run_bot
 import discord
 
 # Token
@@ -57,6 +56,5 @@ async def ping(res):
     '''A simple ping command'''
     await res.send('Pong!')
 # End Legacy Commands
-run_bot()
 bot.run(token)
 
