@@ -1,9 +1,10 @@
-
-# ! Remove this before publishing code!!
-token = "MTA2MjE3MDU2NzU4ODk4NzAyMQ.GuibLT.16tk_pZvPEIL8HdMyrmQdpXhemFcStOa2ovSwo"
-# This example requires the 'message_content' intent.
-
+import os
+from dotenv import load_dotenv
 import discord
+
+# Token
+load_dotenv()
+token = os.getenv('TOKEN')
 
 # Import the commands extension to support slash commands
 from discord.ext import commands
