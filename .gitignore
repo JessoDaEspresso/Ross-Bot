@@ -1,3 +1,4 @@
 # Visual Studio Code
 /.venv
 .env
+/.vscode
