@@ -2,6 +2,8 @@ import os
 from dotenv import load_dotenv
 import discord
 from keep_alive import keep_alive
+from dankmemespost import get_reddit_post
+from discord import Embed
 
 # Token
 load_dotenv()
@@ -46,6 +48,25 @@ async def avatar(Interaction: discord.Interaction, user: discord.User = None):
     await Interaction.response.send_message(Interaction.user.display_avatar)
   else:
     await Interaction.response.send_message(user.display_avatar)
+
+
+@bot.tree.command(name='dankmeme',
+                  description='A random post from r/dankmemes')
+async def dankmeme(Interaction: discord.Interaction):
+  '''A random post from r/dankmemes'''
+  url, permalink, type, thumbnail = get_reddit_post()
+  print(thumbnail)
+  embed = Embed(title="Random post from r/dankmeme", color=0x3498db)
+  if type == None:
+    # GIFs have type none but gifs can't be in embed so if the url ends with .gif we will show thumbnail instead
+    if url.endswidth('.gif'):
+      embed.set_image(thumbnail)
+    else:
+      embed.set_image(url=url)
+  else:
+    embed.set_image(url=thumbnail)
+  embed.add_field(name="Original Post", value=f"{permalink}", inline=False)
+  await Interaction.response.send_message(embed=embed)
 
 
 # End Slash Commands
