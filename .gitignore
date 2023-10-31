@@ -8,3 +8,5 @@ replit.nix
 poetry.lock
 pyproject.toml
 requirements.txt
+venv
+__pycache__
