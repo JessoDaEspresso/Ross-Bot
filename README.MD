@@ -22,4 +22,4 @@ I want the **Discord Developer Badge lol**
 I'm just trying to get used to using GitHub and Git in general and I wanted to mess with markdown syntax, I've been writing my MD files with HTML syntax lol
 
 # Who's Ross??
-**Someone VERY special to me**
+**One of my good buddies who agreed to have his likness used for my little project hahaha**
